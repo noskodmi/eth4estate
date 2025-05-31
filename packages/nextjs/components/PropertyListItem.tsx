@@ -4,7 +4,7 @@ import { FC } from "react";
 import Link from "next/link";
 // import Image from "next/image";
 import { formatEther } from "viem";
-import { Listing } from "./../utils/mocks";
+import { Listing } from "../utils/listingMocks";
 
 interface PropertyListItemProps {
   property: Listing;
@@ -22,7 +22,7 @@ const PropertyListItem: FC<PropertyListItemProps> = ({ property }) => {
 
   return (
     <Link
-      href={`/property/${property.propertyTokenId}`}
+      href={`/listing/${property.id}`}
       className="
         group block overflow-hidden rounded-lg border 
         border-neutral focus:outline-none focus:ring-2 focus:ring-primary

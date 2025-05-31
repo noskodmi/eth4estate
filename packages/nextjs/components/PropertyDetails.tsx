@@ -5,7 +5,7 @@
 import { FC } from "react";
 // import Image from "next/image";
 import { formatEther } from "viem";
-import { Listing } from "../utils/mocks";
+import { Listing } from "../utils/listingMocks";
 
 interface PropertyDetailsProps {
   property: Listing;

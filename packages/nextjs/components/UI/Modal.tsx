@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         <button
           type="button"
           onClick={onClose}
-          className="btn btn-sm btn-circle absolute right-2 top-2"
+          className="btn btn-md btn-circle absolute right-2 top-2"
         >
           ✕
         </button>

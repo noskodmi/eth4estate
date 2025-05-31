@@ -59,7 +59,9 @@ export interface Listing {
 }
 
 /**
- * A handful of example listings—both SALE and RENTAL.
+ * Updated `mockListings` array, including the original 5 listings plus
+ * 3 new RENTAL apartment listings (5‐bed, 4‐bed, 3‐bed) with IDs 6, 7, 8.
+ * Each new listing's `propertyTokenId` matches the `id` in `mockProperties`.
  */
 export const mockListings: Listing[] = [
   // ────────────────────────────────────────────────────────────────────────────────
@@ -68,14 +70,14 @@ export const mockListings: Listing[] = [
     id: 1,
     listingType: "SALE",
     status: "ACTIVE",
-    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // example seller
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
     propertyTokenId: 1001,
     price: "5000000000000000000",    // 5 ETH in Wei
-    paymentToken: "0x0000000000000000000000000000000000000000", // ETH‐native (zero address)
-    intermediary: "0x1111111111111111111111111111111111111111",  // example intermediary
+    paymentToken: "0x0000000000000000000000000000000000000000",
+    intermediary: "0x1111111111111111111111111111111111111111",
     createdAt: 1725148800,           // Tue, 01 Jan 2025 00:00:00 GMT
 
-    // Rental fields (ignored in a SALE listing)
+    // Rental fields (ignored)
     collateralAmount: "0",
     rentPeriod: 0,
     currentTenant: "0x0000000000000000000000000000000000000000",
@@ -83,9 +85,9 @@ export const mockListings: Listing[] = [
     leaseEnd: 0,
 
     // Sale‐specific fields
-    buyer: "0x0000000000000000000000000000000000000000", // not yet purchased
-    escrowAmount: "0",                                  // not yet in escrow
-    aToken: "0x0000000000000000000000000000000000000000", // unused here
+    buyer: "0x0000000000000000000000000000000000000000",
+    escrowAmount: "0",
+    aToken: "0x0000000000000000000000000000000000000000",
   },
 
   // ────────────────────────────────────────────────────────────────────────────────
@@ -94,21 +96,21 @@ export const mockListings: Listing[] = [
     id: 2,
     listingType: "RENTAL",
     status: "ACTIVE",
-    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // landlord
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
     propertyTokenId: 2002,
     price: "1000000000000000000",   // 1 ETH per rentPeriod (in Wei)
-    paymentToken: "0x0000000000000000000000000000000000000000", // native ETH
+    paymentToken: "0x0000000000000000000000000000000000000000",
     intermediary: "0x2222222222222222222222222222222222222222",
     createdAt: 1725235200,          // Wed, 02 Jan 2025 00:00:00 GMT
 
     // Rental fields
     collateralAmount: "2000000000000000000", // 2 ETH deposit
     rentPeriod: 2592000,                      // 30 days in seconds
-    currentTenant: "0xCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCc", // tenant
+    currentTenant: "0xCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCc",
     leaseStart: 1725321600, // Thu, 03 Jan 2025 00:00:00 GMT
     leaseEnd: 1727984000,   // Fri, 31 Jan 2025 00:00:00 GMT
 
-    // Sale‐specific fields (ignored in RENTAL listing)
+    // Sale‐specific fields (ignored)
     buyer: "0x0000000000000000000000000000000000000000",
     escrowAmount: "0",
     aToken: "0x0000000000000000000000000000000000000000",
@@ -120,10 +122,10 @@ export const mockListings: Listing[] = [
     id: 3,
     listingType: "SALE",
     status: "COMPLETED",
-    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // original seller
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
     propertyTokenId: 3003,
-    price: "7500000000000000000",    // 7.5 ETH
-    paymentToken: "0x0000000000000000000000000000000000000000", // native ETH
+    price: "7500000000000000000",    // 7.5 ETH in Wei
+    paymentToken: "0x0000000000000000000000000000000000000000",
     intermediary: "0x3333333333333333333333333333333333333333",
     createdAt: 1725417600,           // Fri, 04 Jan 2025 00:00:00 GMT
 
@@ -135,9 +137,9 @@ export const mockListings: Listing[] = [
     leaseEnd: 0,
 
     // Sale‐specific fields
-    buyer: "0xEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEe",  // actual buyer
-    escrowAmount: "7500000000000000000",               // 7.5 ETH in escrow
-    aToken: "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", // Example Aave aToken
+    buyer: "0xEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEeEe",
+    escrowAmount: "7500000000000000000",
+    aToken: "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
   },
 
   // ────────────────────────────────────────────────────────────────────────────────
@@ -146,7 +148,7 @@ export const mockListings: Listing[] = [
     id: 4,
     listingType: "RENTAL",
     status: "CANCELLED",
-    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // landlord
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
     propertyTokenId: 4004,
     price: "2000000000000000000",   // 2 ETH per rentPeriod
     paymentToken: "0x0000000000000000000000000000000000000000",
@@ -167,14 +169,14 @@ export const mockListings: Listing[] = [
   },
 
   // ────────────────────────────────────────────────────────────────────────────────
-  // 5) A SALE listing that is now DISPUTED (maybe after PurchaseCommitted)
+  // 5) A SALE listing that is now DISPUTED
   {
     id: 5,
     listingType: "SALE",
     status: "DISPUTED",
-    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // original seller
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
     propertyTokenId: 5005,
-    price: "10000000000000000000",   // 10 ETH
+    price: "10000000000000000000",   // 10 ETH in Wei
     paymentToken: "0x0000000000000000000000000000000000000000",
     intermediary: "0x5555555555555555555555555555555555555555",
     createdAt: 1725590400,           // Sun, 06 Jan 2025 00:00:00 GMT
@@ -187,8 +189,103 @@ export const mockListings: Listing[] = [
     leaseEnd: 0,
 
     // Sale‐specific fields
-    buyer: "0x7777777777777777777777777777777777777777",  // committed buyer
-    escrowAmount: "10000000000000000000",                // 10 ETH in escrow
-    aToken: "0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // aToken address
+    buyer: "0x7777777777777777777777777777777777777777",
+    escrowAmount: "10000000000000000000",
+    aToken: "0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  },
+
+  // ────────────────────────────────────────────────────────────────────────────────
+  // 6) New RENTAL: 5‐bedroom apartment listing (ACTIVE)
+  {
+    id: 6,
+    listingType: "RENTAL",
+    status: "ACTIVE",
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",        // same landlord
+    propertyTokenId: 6006,
+    price: "3000000000000000000",   // 3 ETH per rentPeriod (in Wei)
+    paymentToken: "0x0000000000000000000000000000000000000000",
+    intermediary: "0x6666666666666666666666666666666666666666",
+    createdAt: 1725676800,          // Tue, 07 Jan 2025 00:00:00 GMT
+
+    // Rental fields
+    collateralAmount: "6000000000000000000", // 6 ETH deposit
+    rentPeriod: 2592000,                      // 30 days in seconds
+    currentTenant: "0x0000000000000000000000000000000000000000", // not yet rented
+    leaseStart: 0,
+    leaseEnd: 0,
+
+    // Sale‐specific fields (ignored)
+    buyer: "0x0000000000000000000000000000000000000000",
+    escrowAmount: "0",
+    aToken: "0x0000000000000000000000000000000000000000",
+  },
+
+  // ────────────────────────────────────────────────────────────────────────────────
+  // 7) New RENTAL: 4‐bedroom apartment listing (ACTIVE)
+  {
+    id: 7,
+    listingType: "RENTAL",
+    status: "ACTIVE",
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
+    propertyTokenId: 7007,
+    price: "2500000000000000000",   // 2.5 ETH per rentPeriod (in Wei)
+    paymentToken: "0x0000000000000000000000000000000000000000",
+    intermediary: "0x7777777777777777777777777777777777777777",
+    createdAt: 1725763200,          // Wed, 08 Jan 2025 00:00:00 GMT
+
+    // Rental fields
+    collateralAmount: "5000000000000000000", // 5 ETH deposit
+    rentPeriod: 2592000,
+    currentTenant: "0x0000000000000000000000000000000000000000",
+    leaseStart: 0,
+    leaseEnd: 0,
+
+    // Sale‐specific fields (ignored)
+    buyer: "0x0000000000000000000000000000000000000000",
+    escrowAmount: "0",
+    aToken: "0x0000000000000000000000000000000000000000",
+  },
+
+  // ────────────────────────────────────────────────────────────────────────────────
+  // 8) New RENTAL: 3‐bedroom apartment listing (ACTIVE)
+  {
+    id: 8,
+    listingType: "RENTAL",
+    status: "ACTIVE",
+    seller: "0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4",
+    propertyTokenId: 8008,
+    price: "2000000000000000000",   // 2 ETH per rentPeriod (in Wei)
+    paymentToken: "0x0000000000000000000000000000000000000000",
+    intermediary: "0x8888888888888888888888888888888888888888",
+    createdAt: 1725849600,          // Thu, 09 Jan 2025 00:00:00 GMT
+
+    // Rental fields
+    collateralAmount: "4000000000000000000", // 4 ETH deposit
+    rentPeriod: 2592000,
+    currentTenant: "0x0000000000000000000000000000000000000000",
+    leaseStart: 0,
+    leaseEnd: 0,
+
+    // Sale‐specific fields (ignored)
+    buyer: "0x0000000000000000000000000000000000000000",
+    escrowAmount: "0",
+    aToken: "0x0000000000000000000000000000000000000000",
   },
 ];
+
+
+export function getPropertyListing(id: string): Listing | null {
+  const numericId = Number(id);
+  if (Number.isNaN(numericId)) return null;
+
+  const found = mockListings.find((l) => l.id === numericId);
+  return found ?? null;
+}
+
+export function getPropertyListingByPropertyId(id: string): Listing | null {
+  const numericId = Number(id);
+  if (Number.isNaN(numericId)) return null;
+
+  const found = mockListings.find((l) => l.propertyTokenId === numericId);
+  return found ?? null;
+}

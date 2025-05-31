@@ -3,7 +3,7 @@
 import { FC, useMemo, useState } from "react";
 import Button from "./UI/Button";
 import PropertyListItem from "./PropertyListItem";
-import { mockListings, Listing } from "../utils/mocks";
+import { mockListings, Listing } from "../utils/listingMocks";
 
 interface Filters {
   searchText?: string;
@@ -17,7 +17,7 @@ interface PropertyListProps {
 }
 
 const PropertyList: FC<PropertyListProps> = ({ filters }) => {
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 10;
   const [page, setPage] = useState(0);
 
   const filteredListings: Listing[] = useMemo(() => {
@@ -61,7 +61,7 @@ const PropertyList: FC<PropertyListProps> = ({ filters }) => {
 
   if (filteredListings.length === 0) {
     return (
-      <p className="text-neutral-content/80">
+      <p className=" /80">
         No properties match your criteria.
       </p>
     );
