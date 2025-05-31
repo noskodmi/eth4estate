@@ -53,7 +53,7 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
         location,
         pricePerMonth, // you might convert to Wei later in validator
         depositAmount,
-        ipfsImageCid: cid,
+        ipfsImageCid: 'cid',
       };
       onSubmit(data);
     } catch (err: any) {

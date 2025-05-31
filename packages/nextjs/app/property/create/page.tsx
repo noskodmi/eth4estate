@@ -7,7 +7,7 @@ type Step = "form" | "validate" | "complete";
 
 const CreateProperty = () => {
   const [step, setStep] = useState<Step>("form");
-  const [formData, setFormData] = useState<PropertyFormData | null>(null);
+  const [, setFormData] = useState<PropertyFormData | null>(null);
 
   return (
     <div className="mx-auto max-w-2xl mt-12 p-6 bg-white rounded-lg shadow">

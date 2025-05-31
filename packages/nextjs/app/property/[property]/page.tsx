@@ -5,13 +5,16 @@ import PropertyActions from "../../../components/PropertyAction";
 import PropertyDetails from "../../../components/PropertyDetails";
 import { getProperty } from "../../../utils/propertyMock";
 
-interface PropertyPageProps {
-  params: { property: string };
-}
 
-export default async function PropertyPage({ params }: PropertyPageProps) {
+type PageProps = {
+  params: Promise<{ property: string }>;
+};
+
+
+export default async function PropertyPage(props: PageProps) {
   // getProperty should return `null` or `undefined` if not found, or a Listing object if found.
-  const property = await getProperty(params.property);
+  const params = await props.params;
+ const property = getProperty(params.property);
 
   if (!property) {
     notFound();

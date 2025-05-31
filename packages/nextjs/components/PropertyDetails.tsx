@@ -3,7 +3,7 @@
 "use client"; // if you plan to use any client‐only hooks or state; otherwise remove this line
 
 import { FC } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { formatEther } from "viem";
 import { Listing } from "../utils/mocks";
 

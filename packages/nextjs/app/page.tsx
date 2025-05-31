@@ -14,7 +14,7 @@ interface Filters {
 }
 
 const Home: NextPage = () => {
-  const [filters, setFilters] = useState<Filters>({});
+  const [filters] = useState<Filters>({});
 
   return (
     <div className=" mx-auto mt-12">

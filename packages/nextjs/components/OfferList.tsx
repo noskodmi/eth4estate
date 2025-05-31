@@ -23,8 +23,8 @@ interface MockOffer {
   expiration: number; // UNIX timestamp
 }
 
-const OfferList: FC<OfferListProps> = ({ propertyId }) => {
-  const [offers, setOffers] = useState<MockOffer[]>([]);
+const OfferList: FC<OfferListProps> = ({  }) => {
+  const [offers, ] = useState<MockOffer[]>([]);
 
   // In a real app, you might do:
   // useEffect(() => {

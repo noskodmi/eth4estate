@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 // interface LoginFormProps {}
 
-const LoginForm: FC<{}> = () => {
+const LoginForm: FC = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

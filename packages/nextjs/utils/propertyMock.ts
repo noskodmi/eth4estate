@@ -8,7 +8,7 @@ import { Listing, mockListings } from "./mocks";
  *   2) Call `useContractRead` / `viem` to fetch on‐chain
  *   3) Or query your backend / subgraph
  */
-export async function getProperty(id: string): Promise<Listing | null> {
+export function getProperty(id: string): Listing | null {
   const numericId = Number(id);
   if (Number.isNaN(numericId)) return null;
 
