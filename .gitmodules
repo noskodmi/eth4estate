@@ -1,0 +1,6 @@
+[submodule "eth4estatevlayer/lib/forge-std"]
+	path = eth4estatevlayer/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "packages/eth4estatevlayer/lib/forge-std"]
+	path = packages/eth4estatevlayer/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
