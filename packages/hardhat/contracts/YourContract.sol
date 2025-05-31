@@ -1,78 +1,41 @@
-//SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0 <0.9.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-// Useful for debugging. Remove when deploying to a live network.
-import "hardhat/console.sol";
+import {Prover} from "vlayer-0.1.0/Prover.sol";
 
-// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
-// import "@openzeppelin/contracts/access/Ownable.sol";
-
-/**
- * A smart contract that allows changing a state variable of the contract and tracking the changes
- * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl
- */
-contract YourContract {
-    // State Variables
-    address public immutable owner;
-    string public greeting = "Building Unstoppable Apps!!!";
-    bool public premium = false;
-    uint256 public totalCounter = 0;
-    mapping(address => uint) public userGreetingCounter;
-
-    // Events: a way to emit log statements from smart contract that can be listened to by external parties
-    event GreetingChange(address indexed greetingSetter, string newGreeting, bool premium, uint256 value);
-
-    // Constructor: Called once on contract deployment
-    // Check packages/hardhat/deploy/00_deploy_your_contract.ts
-    constructor(address _owner) {
-        owner = _owner;
+contract PropertyVerificationProver is Prover {
+    // For hackathon: simplified property verification
+    // In production: would integrate with government APIs or trusted data sources
+    
+    function verifyPropertyOwnership(
+        string memory propertyAddress,
+        address claimant,
+        uint256 secretNonce
+    ) public returns (Proof, bytes32, address) {
+        // Generate commitment hash (this will be public)
+        bytes32 commitment = keccak256(
+            abi.encodePacked(propertyAddress, claimant, secretNonce)
+        );
+        
+        // For hackathon: basic validation (in production: API calls to verify ownership)
+        require(bytes(propertyAddress).length > 10, "Invalid property address");
+        require(claimant != address(0), "Invalid claimant address");
+        require(secretNonce > 0, "Invalid secret nonce");
+        
+        // Simulate property ownership verification
+        // In production: this would call external APIs or check trusted data sources
+        bool isValidOwner = _simulateOwnershipCheck(propertyAddress, claimant);
+        require(isValidOwner, "Property ownership verification failed");
+        
+        return (proof(), commitment, claimant);
     }
-
-    // Modifier: used to define a set of rules that must be met before or after a function is executed
-    // Check the withdraw() function
-    modifier isOwner() {
-        // msg.sender: predefined variable that represents address of the account that called the current function
-        require(msg.sender == owner, "Not the Owner");
-        _;
+    
+    function _simulateOwnershipCheck(
+        string memory propertyAddress,
+        address claimant
+    ) private pure returns (bool) {
+        // Hackathon simulation: accept if address length > 20 chars
+        // In production: integrate with real property databases
+        return bytes(propertyAddress).length > 20;
     }
-
-    /**
-     * Function that allows anyone to change the state variable "greeting" of the contract and increase the counters
-     *
-     * @param _newGreeting (string memory) - new greeting to save on the contract
-     */
-    function setGreeting(string memory _newGreeting) public payable {
-        // Print data to the hardhat chain console. Remove when deploying to a live network.
-        console.log("Setting new greeting '%s' from %s", _newGreeting, msg.sender);
-
-        // Change state variables
-        greeting = _newGreeting;
-        totalCounter += 1;
-        userGreetingCounter[msg.sender] += 1;
-
-        // msg.value: built-in global variable that represents the amount of ether sent with the transaction
-        if (msg.value > 0) {
-            premium = true;
-        } else {
-            premium = false;
-        }
-
-        // emit: keyword used to trigger an event
-        emit GreetingChange(msg.sender, _newGreeting, msg.value > 0, msg.value);
-    }
-
-    /**
-     * Function that allows the owner to withdraw all the Ether in the contract
-     * The function can only be called by the owner of the contract as defined by the isOwner modifier
-     */
-    function withdraw() public isOwner {
-        (bool success, ) = owner.call{ value: address(this).balance }("");
-        require(success, "Failed to send Ether");
-    }
-
-    /**
-     * Function that allows the contract to receive ETH
-     */
-    receive() external payable {}
 }
