@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const [filters] = useState<Filters>({});
 
   return (
-    <div className=" mx-auto mt-12">
+    <div className=" mx-12 mt-12">
       <h1 className="text-3xl font-bold mb-6">Find Properties</h1>
       {/* 
       <PropertyFilter
