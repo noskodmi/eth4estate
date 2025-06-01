@@ -4,7 +4,6 @@ import PropertyListItem from "./OwnerProperyListItem";
 import { PropertyInterface } from "~~/utils/propertyMocks";
 
 const PropertyList: FC<{ properties: PropertyInterface[] }> = ({ properties }) => {
-
   return (
     <ul className="divide-y divide-neutral-content/10">
       {properties.map(prop => (

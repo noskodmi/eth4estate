@@ -1,4 +1,3 @@
-
 // "use client";
 
 // import { FC, useEffect, useState } from "react";
@@ -58,7 +57,7 @@
 //       <h2 className="text-2xl font-semibold mb-4">Offers Received</h2>
 //       <ul className="space-y-4">
 //         {offers.map((offer) => (
-//           <li key={offer.id} className="p-4 border rounded-lg flex justify-between items-center">
+//           <li key={offer.id} className="p-4 border rounded-xl flex justify-between items-center">
 //             <div>
 //               <p>
 //                 <span className="font-medium">Offer ID:</span> {offer.id}

@@ -1,17 +1,17 @@
 // components/Property/PropertyForm.tsx
 import { FC, useState } from "react";
-// import { uploadFileToIPFS } from "./../utils/api";  // wrap kubo-rpc-client or bgipfs
-import toast from "react-hot-toast";
 import Button from "./UI/Button";
 import Input from "./UI/Input";
+// import { uploadFileToIPFS } from "./../utils/api";  // wrap kubo-rpc-client or bgipfs
+import toast from "react-hot-toast";
 
 export interface PropertyFormData {
   title: string;
   description: string;
   location: string;
-  pricePerMonth: string;    // in ETH (string to parse)
-  depositAmount: string;    // in ETH
-  ipfsImageCid: string;     // returned from IPFS
+  pricePerMonth: string; // in ETH (string to parse)
+  depositAmount: string; // in ETH
+  ipfsImageCid: string; // returned from IPFS
   // you can expand with more fields: availabilityDates, amenities, etc.
 }
 
@@ -53,7 +53,7 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
         location,
         pricePerMonth, // you might convert to Wei later in validator
         depositAmount,
-        ipfsImageCid: 'cid',
+        ipfsImageCid: "cid",
       };
       onSubmit(data);
     } catch (err: any) {
@@ -72,17 +72,17 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
           type="text"
           placeholder="Charming Studio in Prague"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={e => setTitle(e.target.value)}
         />
       </div>
 
       <div>
         <label className="block mb-1 font-medium">Description</label>
         <textarea
-          className="w-full border-gray-300 rounded-md p-2 focus:ring focus:ring-indigo-200"
+          className="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-indigo-200"
           placeholder="A cozy apartment near Old Town..."
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={e => setDescription(e.target.value)}
           rows={4}
         />
       </div>
@@ -93,7 +93,7 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
           type="text"
           placeholder="Karlova 12, Prague 1"
           value={location}
-          onChange={(e) => setLocation(e.target.value)}
+          onChange={e => setLocation(e.target.value)}
         />
       </div>
 
@@ -105,7 +105,7 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
             step="0.0001"
             placeholder="0.1"
             value={pricePerMonth}
-            onChange={(e) => setPricePerMonth(e.target.value)}
+            onChange={e => setPricePerMonth(e.target.value)}
           />
         </div>
         <div>
@@ -115,19 +115,14 @@ const PropertyForm: FC<PropertyFormProps> = ({ onSubmit }) => {
             step="0.0001"
             placeholder="0.2"
             value={depositAmount}
-            onChange={(e) => setDepositAmount(e.target.value)}
+            onChange={e => setDepositAmount(e.target.value)}
           />
         </div>
       </div>
 
       <div>
         <label className="block mb-1 font-medium">Property Image</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="block"
-        />
+        <input type="file" accept="image/*" onChange={handleImageChange} className="block" />
       </div>
 
       <Button type="submit" disabled={isUploading}>

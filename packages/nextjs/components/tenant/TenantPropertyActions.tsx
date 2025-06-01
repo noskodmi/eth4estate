@@ -51,8 +51,8 @@ const TenantPropertyActions: FC<TenantPropertyActionsProps> = ({ listing, proper
             ? "Applying…"
             : "Processing…"
           : listing.listingType === "RENTAL"
-          ? "Apply to Rent"
-          : "Submit Offer"}
+            ? "Apply to Rent"
+            : "Submit Offer"}
       </Button>
     </div>
   );

@@ -24,21 +24,17 @@ const AccountPage: FC = () => {
         {/* ================================ */}
         {/* 1) Account & KYC Section       */}
         {/* ================================ */}
-        <section className="bg-base-100 rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold   mb-4">Account Info</h2>
+        <section className="bg-base-100 rounded-xl shadow-md p-6">
+          <h2 className="text-2xl font-bold mb-4">Account Info</h2>
 
           {!isConnected ? (
-            <p className=" /80">
-              You are not connected. Please connect your wallet to view your account details.
-            </p>
+            <p className=" /80">You are not connected. Please connect your wallet to view your account details.</p>
           ) : (
             <div className="space-y-4">
               {/* Wallet Address */}
               <div>
                 <p className="text-sm  /80">Connected as:</p>
-                <p className="font-mono text-lg  ">
-                  {`${address?.slice(0, 6)}…${address?.slice(-4)}`}
-                </p>
+                <p className="font-mono text-lg  ">{`${address?.slice(0, 6)}…${address?.slice(-4)}`}</p>
               </div>
 
               {/* KYC Status (Placeholder) */}
@@ -65,7 +61,7 @@ const AccountPage: FC = () => {
         {/* ==================================== */}
         {/* 2) Owned Properties + Create Button */}
         {/* ==================================== */}
-        <section className="bg-base-100 rounded-lg shadow-md p-6">
+        <section className="bg-base-100 rounded-xl shadow-md p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Your Properties</h2>
             <Link href="/property/create" className="btn btn-primary btn-md">
@@ -74,9 +70,7 @@ const AccountPage: FC = () => {
           </div>
 
           {(!isConnected || ownedProperties.length === 0) && isConnected ? (
-            <p className=" /80">
-              You don’t own any properties yet. Click “Create New Property” to list one.
-            </p>
+            <p className=" /80">You don’t own any properties yet. Click “Create New Property” to list one.</p>
           ) : !isConnected ? (
             <p className=" /80">Connect your wallet to see your owned properties.</p>
           ) : (

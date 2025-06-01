@@ -41,7 +41,7 @@ const LoginForm: FC = () => {
           type="email"
           className="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 p-2"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           required
         />
       </div>
@@ -51,7 +51,7 @@ const LoginForm: FC = () => {
           type="password"
           className="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 p-2"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
           required
         />
       </div>

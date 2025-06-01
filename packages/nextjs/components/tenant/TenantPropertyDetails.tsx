@@ -1,9 +1,9 @@
 "use client";
 
 import { FC } from "react";
-import { formatEther } from "viem";
 import { Listing } from "../../utils/listingMocks";
 import { PropertyInterface } from "../../utils/propertyMocks";
+import { formatEther } from "viem";
 
 interface TenantPropertyDetailsProps {
   listing: Listing;
@@ -37,12 +37,10 @@ const TenantPropertyDetails: FC<TenantPropertyDetailsProps> = ({ listing, proper
       {/* Listing‐specific Details */}
       <div>
         <p className="mt-1 text-sm">
-          <span className="font-medium">Owner:</span>{" "}
-          {listing.seller.slice(0, 6)}…{listing.seller.slice(-4)}
+          <span className="font-medium">Owner:</span> {listing.seller.slice(0, 6)}…{listing.seller.slice(-4)}
         </p>
         <p className="mt-2">
-          <span className="font-medium">Status:</span>{" "}
-          <span className="font-semibold">{listing.status}</span>
+          <span className="font-medium">Status:</span> <span className="font-semibold">{listing.status}</span>
         </p>
       </div>
 

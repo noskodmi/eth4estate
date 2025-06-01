@@ -35,11 +35,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
       {/* Clicking on this overlay does nothing by default—closing is handled by our 'Close' button */}
       <div className="modal-box relative">
         {/* Close button in the top‐right corner */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="btn btn-md btn-circle absolute right-2 top-2"
-        >
+        <button type="button" onClick={onClose} className="btn btn-md btn-circle absolute right-2 top-2">
           ✕
         </button>
 

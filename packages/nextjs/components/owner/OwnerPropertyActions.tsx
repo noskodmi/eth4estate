@@ -27,8 +27,7 @@ const OwnerPropertyActions: FC<OwnerPropertyActionsProps> = ({ listing, property
   const isOwner = address?.toLowerCase() === listing.seller.toLowerCase();
   const isActive = listing.status === "ACTIVE";
   const isRental = listing.listingType === "RENTAL";
-  const isLeased =
-    isRental && listing.currentTenant !== "0x0000000000000000000000000000000000000000";
+  const isLeased = isRental && listing.currentTenant !== "0x0000000000000000000000000000000000000000";
 
   const handleCancelListing = async () => {
     setIsSubmitting(true);
@@ -60,11 +59,7 @@ const OwnerPropertyActions: FC<OwnerPropertyActionsProps> = ({ listing, property
     <div className="space-x-4 mt-4">
       {isActive && (
         <Button onClick={handleCancelListing} disabled={isSubmitting} className="btn btn-error">
-          {isSubmitting
-            ? "Processing…"
-            : isRental
-            ? "Cancel Rental Listing"
-            : "Cancel Sale Listing"}
+          {isSubmitting ? "Processing…" : isRental ? "Cancel Rental Listing" : "Cancel Sale Listing"}
         </Button>
       )}
 

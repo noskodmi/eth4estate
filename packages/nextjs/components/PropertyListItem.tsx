@@ -18,8 +18,8 @@ const PropertyListItem: FC<PropertyListItemProps> = ({ property }) => {
     <Link
       href={`/listing/${property.id}`}
       className="
-        group block overflow-hidden rounded-lg border 
-        border-neutral focus:outline-none focus:ring-2 focus:ring-primary
+        group block overflow-hidden rounded-xl  
+         focus:outline-none focus:ring-2 focus:ring-primary
         bg-base-100 text-base-content shadow
         hover:shadow-lg transition-shadow duration-300
 

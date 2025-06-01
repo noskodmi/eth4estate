@@ -1,11 +1,51 @@
 // components/PropertyDetails.tsx
+"use client";
 
-"use client"; // if you plan to use any client‐only hooks or state; otherwise remove this line
-
+// if you plan to use any client‐only hooks or state; otherwise remove this line
 import { FC } from "react";
+import { Listing } from "../utils/listingMocks";
 // import Image from "next/image";
 import { formatEther } from "viem";
-import { Listing } from "../utils/listingMocks";
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
+
+// components/PropertyDetails.tsx
 
 interface PropertyDetailsProps {
   property: Listing;
@@ -38,17 +78,12 @@ const PropertyDetails: FC<PropertyDetailsProps> = ({ property }) => {
 
       {/* Textual Details */}
       <div>
-        <h1 className="text-3xl font-bold">
-          Property #{property.propertyTokenId}
-        </h1>
+        <h1 className="text-3xl font-bold">Property #{property.propertyTokenId}</h1>
         <p className=" mt-1">
           Seller: {property.seller.slice(0, 6)}…{property.seller.slice(-4)}
         </p>
         <p className="mt-2 text-lg">
-          Status:{" "}
-          <span className="font-semibold">
-            {property.status}
-          </span>
+          Status: <span className="font-semibold">{property.status}</span>
         </p>
       </div>
 
@@ -56,16 +91,12 @@ const PropertyDetails: FC<PropertyDetailsProps> = ({ property }) => {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <p className="font-medium">Price</p>
-          <p className="">
-            {formatEther(BigInt(property.price))} ETH
-          </p>
+          <p className="">{formatEther(BigInt(property.price))} ETH</p>
         </div>
         {property.listingType === "RENTAL" && (
           <div>
             <p className="font-medium">Collateral</p>
-            <p className="text-gray-700">
-              {formatEther(BigInt(property.collateralAmount))} ETH
-            </p>
+            <p className="text-gray-700">{formatEther(BigInt(property.collateralAmount))} ETH</p>
           </div>
         )}
       </div>

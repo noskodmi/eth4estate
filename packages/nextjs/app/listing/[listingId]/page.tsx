@@ -20,7 +20,7 @@ export default async function TenantPropertyPage(props: PageProps) {
   }
 
   return (
-    <div className=" mx-12 mt-12 p-6 border rounded-lg border-neutral shadow-sm">
+    <div className=" mx-12 mt-12 p-6 bg-base-100 rounded-xl border-neutral shadow-sm">
       <TenantPropertyDetails listing={listing} property={property} />
 
       <div className="mt-8">

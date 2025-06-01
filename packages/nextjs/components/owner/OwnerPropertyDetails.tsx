@@ -1,9 +1,9 @@
 "use client";
 
 import { FC } from "react";
-import { formatEther } from "viem";
 import { Listing } from "../../utils/listingMocks";
 import { PropertyInterface } from "../../utils/propertyMocks";
+import { formatEther } from "viem";
 
 interface OwnerPropertyDetailsProps {
   listing: Listing;
@@ -17,8 +17,7 @@ interface OwnerPropertyDetailsProps {
  */
 const OwnerPropertyDetails: FC<OwnerPropertyDetailsProps> = ({ listing, property }) => {
   const isRental = listing.listingType === "RENTAL";
-  const isLeased =
-    isRental && listing.currentTenant !== "0x0000000000000000000000000000000000000000";
+  const isLeased = isRental && listing.currentTenant !== "0x0000000000000000000000000000000000000000";
   const isSale = listing.listingType === "SALE";
   const hasBuyer = isSale && listing.buyer !== "0x0000000000000000000000000000000000000000";
 
@@ -43,8 +42,7 @@ const OwnerPropertyDetails: FC<OwnerPropertyDetailsProps> = ({ listing, property
       {/* Listing‐specific Details */}
       <div>
         <p className="mt-1">
-          <span className="font-medium">Status:</span>{" "}
-          <span className="font-semibold">{listing.status}</span>
+          <span className="font-medium">Status:</span> <span className="font-semibold">{listing.status}</span>
         </p>
       </div>
 
@@ -70,14 +68,13 @@ const OwnerPropertyDetails: FC<OwnerPropertyDetailsProps> = ({ listing, property
       {/* Tenant / Buyer Info */}
       {isLeased && (
         <p className="mt-2">
-          <span className="font-medium">Current Tenant:</span>{" "}
-          {listing.currentTenant.slice(0, 6)}…{listing.currentTenant.slice(-4)}
+          <span className="font-medium">Current Tenant:</span> {listing.currentTenant.slice(0, 6)}…
+          {listing.currentTenant.slice(-4)}
         </p>
       )}
       {hasBuyer && (
         <p className="mt-2">
-          <span className="font-medium">Buyer:</span>{" "}
-          {listing.buyer.slice(0, 6)}…{listing.buyer.slice(-4)}
+          <span className="font-medium">Buyer:</span> {listing.buyer.slice(0, 6)}…{listing.buyer.slice(-4)}
         </p>
       )}
     </div>

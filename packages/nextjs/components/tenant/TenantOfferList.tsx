@@ -51,7 +51,7 @@
 //       <h2 className="text-2xl font-semibold mb-4">Your Offers</h2>
 //       <ul className="space-y-4">
 //         {offers.map((offer) => (
-//           <li key={offer.id} className="p-4 border rounded-lg">
+//           <li key={offer.id} className="p-4 border rounded-xl">
 //             <p>
 //               <span className="font-medium">Offer ID:</span> {offer.id}
 //             </p>

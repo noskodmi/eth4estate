@@ -1,5 +1,6 @@
 // components/PropertyList/PropertyFilter.tsx
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
+import Input from "./UI/Input";
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -16,7 +17,6 @@ function useDebounce<T>(value: T, delay: number): T {
 
   return debouncedValue;
 }
-import Input from "./UI/Input";
 
 interface Filters {
   searchText?: string;
@@ -30,10 +30,7 @@ interface PropertyFilterProps {
   onFilterChange: (filters: Filters) => void;
 }
 
-const PropertyFilter: FC<PropertyFilterProps> = ({
-  initialFilters,
-  onFilterChange,
-}) => {
+const PropertyFilter: FC<PropertyFilterProps> = ({ initialFilters, onFilterChange }) => {
   const [searchText, setSearchText] = useState(initialFilters.searchText || "");
   const [minPrice, setMinPrice] = useState(initialFilters.minPrice || 0);
   const [maxPrice, setMaxPrice] = useState(initialFilters.maxPrice || 0);
@@ -54,7 +51,7 @@ const PropertyFilter: FC<PropertyFilterProps> = ({
             type="text"
             placeholder="Title or Location"
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={e => setSearchText(e.target.value)}
           />
         </div>
         <div>
@@ -63,7 +60,7 @@ const PropertyFilter: FC<PropertyFilterProps> = ({
             type="number"
             step="0.0001"
             value={minPrice || ""}
-            onChange={(e) => setMinPrice(Number(e.target.value))}
+            onChange={e => setMinPrice(Number(e.target.value))}
           />
         </div>
         <div>
@@ -72,7 +69,7 @@ const PropertyFilter: FC<PropertyFilterProps> = ({
             type="number"
             step="0.0001"
             value={maxPrice || ""}
-            onChange={(e) => setMaxPrice(Number(e.target.value))}
+            onChange={e => setMaxPrice(Number(e.target.value))}
           />
         </div>
         <div>
@@ -80,7 +77,7 @@ const PropertyFilter: FC<PropertyFilterProps> = ({
           <select
             className="w-full border-gray-300 rounded-md p-2 focus:ring focus:ring-indigo-200"
             value={status}
-            onChange={(e) => setStatus(e.target.value)}
+            onChange={e => setStatus(e.target.value)}
           >
             <option value="">All</option>
             <option value="LISTED">Listed</option>

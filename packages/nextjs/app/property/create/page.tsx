@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from "react";
 import PropertyForm, { PropertyFormData } from "../../../components/PropertyForm";
+
 // import PropertyValidator from "../../../components/PropertyValidator";
 
 type Step = "form" | "validate" | "complete";
@@ -10,12 +12,12 @@ const CreateProperty = () => {
   const [, setFormData] = useState<PropertyFormData | null>(null);
 
   return (
-    <div className="mx-auto max-w-2xl mt-12 p-6 bg-white rounded-lg shadow">
+    <div className="bg-base-100 mx-auto max-w-2xl mt-12 p-6 rounded-xl shadow">
       <h1 className="text-3xl font-bold mb-8">Create &amp; Validate Property</h1>
 
       {step === "form" && (
         <PropertyForm
-          onSubmit={(data) => {
+          onSubmit={data => {
             setFormData(data);
             setStep("validate");
           }}
