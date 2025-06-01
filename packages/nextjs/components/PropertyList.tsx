@@ -61,7 +61,7 @@ const PropertyList: FC<PropertyListProps> = ({ filters }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch justify-center">
         {paginatedListings.map(listing => (
           <div key={listing.id} className="h-full flex flex-col">
-            <PropertyListItem property={listing} />
+            <PropertyListItem listing={listing} />
           </div>
         ))}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+import Image from "next/image";
 import { Listing } from "../../utils/listingMocks";
 import { PropertyInterface } from "../../utils/propertyMocks";
 import { formatEther } from "viem";
@@ -19,8 +20,22 @@ const TenantPropertyDetails: FC<TenantPropertyDetailsProps> = ({ listing, proper
   return (
     <div className="space-y-6">
       {/* Image Placeholder */}
-      <div className="w-full h-60 bg-gray-100 rounded-md flex items-center justify-center">
-        <span className="text-gray-400">Image CID: {property.ipfsImageCid}</span>
+      <div
+        className="
+          relative 
+          w-full 
+          h-80            /* default height on very small screens */
+          sm:h-96         /* slightly taller on small (≥640px) screens */
+          md:h-112         /* even taller on medium (≥768px) screens */
+          lg:h-128        /* large (≥1024px) screens */
+          xl:h-128        /* extra-large (≥1280px) screens */
+          bg-neutral-content/10 
+          group-hover:scale-105 
+          transition-transform 
+          duration-300
+        "
+      >
+        <Image src={`${property.ipfsImageCid}`} alt={`Property #${property.id}`} fill style={{ objectFit: "cover" }} />
       </div>
 
       {/* Property Metadata */}

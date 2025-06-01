@@ -31,7 +31,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 1, Old Town Square",
     pricePerMonth: "0",            // Not applicable for SALE
     depositAmount: "0",            // Not applicable for SALE
-    ipfsImageCid: "QmTownhouseImgCidExample1",
+    ipfsImageCid: "/demo-img-1.png",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -44,7 +44,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 5, Smíchov",
     pricePerMonth: "1",            // 1 ETH per month
     depositAmount: "2",            // 2 ETH deposit
-    ipfsImageCid: "QmFlatImgCidExample2",
+    ipfsImageCid: "/demo-img-2.jpg",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -57,7 +57,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 6, Dejvice",
     pricePerMonth: "0",            // Not applicable for SALE
     depositAmount: "0",            // Not applicable for SALE
-    ipfsImageCid: "QmVillaImgCidExample3",
+    ipfsImageCid: "/demo-img-3.jpg",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -70,7 +70,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 2, Vinohrady",
     pricePerMonth: "2",            // 2 ETH per month
     depositAmount: "0",            // Never taken (cancelled)
-    ipfsImageCid: "QmStudioImgCidExample4",
+    ipfsImageCid: "/demo-img-2.jpg",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -83,7 +83,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 1, Josefov",
     pricePerMonth: "0",            // Not applicable for SALE
     depositAmount: "0",            // Not applicable for SALE
-    ipfsImageCid: "QmLoftImgCidExample5",
+    ipfsImageCid: "/demo-img-1.png",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -96,7 +96,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 4, Nusle",
     pricePerMonth: "3",            // 3 ETH per month
     depositAmount: "6",            // 6 ETH deposit
-    ipfsImageCid: "Qm5BedAptImgCidExample6",
+    ipfsImageCid: "/demo-img-3.jpg",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -109,7 +109,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 3, Žižkov",
     pricePerMonth: "2.5",          // 2.5 ETH per month
     depositAmount: "5",            // 5 ETH deposit
-    ipfsImageCid: "Qm4BedAptImgCidExample7",
+    ipfsImageCid: "/demo-img-1.png",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 
@@ -122,7 +122,7 @@ export const mockProperties: PropertyInterface[] = [
     location: "Prague 10, Strašnice",
     pricePerMonth: "2",            // 2 ETH per month
     depositAmount: "4",            // 4 ETH deposit
-    ipfsImageCid: "Qm3BedAptImgCidExample8",
+    ipfsImageCid: "/demo-img-2.jpg",
     owner:"0xe843f6aF66E56d3d8093b1134FaF2698C8721BA4"
   },
 ];

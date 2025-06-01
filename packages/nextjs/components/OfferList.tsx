@@ -1,50 +1,7 @@
-// components/OfferList.tsx
 "use client";
 
 import { FC, useState } from "react";
 import { formatEther } from "viem";
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// components/OfferList.tsx
-
-// import { Listing } from "../utils/mocks";
 
 /**
  * For now, this is a placeholder/stubbed list of offers.

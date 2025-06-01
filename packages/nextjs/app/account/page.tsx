@@ -41,7 +41,7 @@ const AccountPage: FC = () => {
               <div>
                 <p className="text-sm  /80">KYC Status:</p>
                 <p className="inline-flex items-center font-medium  ">
-                  <span className="badge badge-info mr-2">Pending</span>
+                  <span className="badge badge-primary mr-2">Pending</span>
                   {/* Replace the above “Pending” with real status when available */}
                   <span className="text-sm  /80">You have not submitted KYC yet.</span>
                   {/* You could add a “Submit KYC” button here */}

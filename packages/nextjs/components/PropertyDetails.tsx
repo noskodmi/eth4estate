@@ -1,4 +1,3 @@
-// components/PropertyDetails.tsx
 "use client";
 
 // if you plan to use any client‐only hooks or state; otherwise remove this line
@@ -6,46 +5,6 @@ import { FC } from "react";
 import { Listing } from "../utils/listingMocks";
 // import Image from "next/image";
 import { formatEther } from "viem";
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
-
-// components/PropertyDetails.tsx
 
 interface PropertyDetailsProps {
   property: Listing;

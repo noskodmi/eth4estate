@@ -1,52 +1,9 @@
-// components/PropertyActions.tsx
 "use client";
 
 import { FC, useState } from "react";
 import { Listing } from "../utils/listingMocks";
 import Button from "./UI/Button";
 import { useAccount } from "wagmi";
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
-
-// components/PropertyActions.tsx
 
 /**
  * Stubbed “Property Actions”:
